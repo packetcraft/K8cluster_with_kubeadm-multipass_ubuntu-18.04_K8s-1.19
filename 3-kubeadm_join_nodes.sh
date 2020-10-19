@@ -1,4 +1,3 @@
-
 #!/bin/bash
 NODES=$(echo worker{1..2})
 
