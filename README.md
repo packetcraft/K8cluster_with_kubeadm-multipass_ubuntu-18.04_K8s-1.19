@@ -62,6 +62,13 @@ cp  kubeconfig.yaml /Users/xxxxxxx/.kube/config
 kubectl get nodes
 ```
 
+# Confirm that all pods are up and running
+
+```bash
+kubectl get nodes --all-namespaces
+kubectl get nodes
+```
+
 ## Install MetalLB
 
 ```bash
