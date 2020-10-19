@@ -21,12 +21,12 @@ https://github.com/CanonicalLtd/multipass/releases
 Deploy the master node, 2 worker nodes and join the worker nodes into the cluster step by step:
 
 ```bash
-#make teh script executable
+#make the script executable
 chmod 755 1-deploy-kubeadm-master.sh
 chmod 755 2-deploy-kubeadm-nodes.sh
 chmod 755 3-kubeadm_join_nodes.sh
 
-#execute teh script
+#execute the script
 ./1-deploy-kubeadm-master.sh
 ./2-deploy-kubeadm-nodes.sh
 ./3-kubeadm_join_nodes.sh
@@ -41,14 +41,12 @@ or deploy with a single command:
 You should get something similar to this at the end:
 
 ```bash
-NAME      STATUS   ROLES    AGE     VERSION
-master    Ready    master   8m55s   v1.17.0
-worker1   Ready    node     3m45s   v1.17.0
-worker2   Ready    node     3m24s   v1.17.0
+NAME      STATUS     ROLES    AGE     VERSION
+master    NotReady   master   5m17s   v1.19.2
+worker1   NotReady   node     42s     v1.19.2
+worker2   NotReady   node     34s     v1.19.2
 ############################################################################
-Enjoy and learn to love learning :-)
-Total runtime in minutes was: 06:30
-############################################################################
+Enjoy :-)
 ```
 
 ## Copy the locally created kubeconfig files to be avaibale system wide
@@ -67,6 +65,7 @@ kubectl get nodes
 ## Install MetalLB
 
 ```bash
+chmod 755 install-metal-lb.sh
 ./install-metal-lb.sh
 ```
 
