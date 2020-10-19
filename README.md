@@ -60,13 +60,10 @@ KUBECONFIG=kubeconfig.yaml kubectl get nodes
 cp  kubeconfig.yaml /Users/xxxxxxx/.kube/config
 # then you can run kubectl normally
 kubectl get nodes
-```
 
-# Confirm that all pods are up and running
 
-```bash
+## Confirm that all pods are up and running
 kubectl get nodes --all-namespaces
-kubectl get nodes
 ```
 
 ## Install MetalLB
@@ -74,9 +71,12 @@ kubectl get nodes
 ```bash
 chmod 755 install-metal-lb.sh
 ./install-metal-lb.sh
+
+## Confirm that all pods are up and running
+kubectl get nodes --all-namespaces
 ```
 
-### Setting up Traefik
+## Setting up Traefik
 
 ```bash
 kubectl apply -f configmap.yml
