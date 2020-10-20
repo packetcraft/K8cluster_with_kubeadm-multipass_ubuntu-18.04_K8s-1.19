@@ -1,5 +1,5 @@
 #!/bin/bash
-multipass delete master5 worker51 worker52
+multipass delete master6 worker61 worker62
 multipass purge
 rm kubeconfig.yaml
 #
