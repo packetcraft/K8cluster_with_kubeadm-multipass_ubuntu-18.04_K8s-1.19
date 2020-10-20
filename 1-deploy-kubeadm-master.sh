@@ -1,5 +1,5 @@
 #!/bin/bash
-multipass launch  --name master66 --cpus 2 --mem 2G --disk 12G 18.04
+multipass launch  --name master6 --cpus 2 --mem 2G --disk 12G 18.04
 multipass exec master6 -- bash -c 'wget https://packages.cloud.google.com/apt/doc/apt-key.gpg'
 multipass exec master6 -- bash -c 'sudo apt-key add apt-key.gpg'
 multipass exec master6 -- bash -c 'sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"'
