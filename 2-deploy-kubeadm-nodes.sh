@@ -20,7 +20,7 @@ multipass exec ${NODE} -- bash -c 'sudo systemctl restart docker'
 multipass exec ${NODE} -- bash -c 'sudo usermod -aG docker ubuntu'
 multipass exec ${NODE} -- bash -c 'sudo apt-get install -y kubelet kubeadm kubectl'
 # multipass exec ${NODE} -- bash -c 'sudo apt-mark hold kubelet kubeadm kubectl'
-multipass exec master5 -- bash -c 'sudo apt-get install -y kubelet=1.19.3-00 kubeadm=1.19.3-00 kubectl=1.19.3-00'
+multipass exec ${NODE} -- bash -c 'sudo apt-get install -y kubelet=1.19.3-00 kubeadm=1.19.3-00 kubectl=1.19.3-00'
 multipass exec ${NODE} -- bash -c 'sudo swapoff -a'
 multipass exec ${NODE} -- bash -c  "sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab"
 multipass exec ${NODE} -- bash -c 'sudo sysctl net.bridge.bridge-nf-call-iptables=1'
