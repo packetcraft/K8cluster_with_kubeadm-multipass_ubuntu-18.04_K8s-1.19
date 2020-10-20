@@ -16,7 +16,7 @@ multipass exec master6 -- bash -c 'sudo systemctl daemon-reload'
 multipass exec master6 -- bash -c 'sudo systemctl restart docker'
 multipass exec master6 -- bash -c 'sudo usermod -aG docker ubuntu'
 # multipass exec master6 -- bash -c 'sudo apt-get install -y kubelet kubeadm kubectl'
-multipass exec master5 -- bash -c 'sudo apt-get install -y kubelet=1.19.3-00 kubeadm=1.19.3-00 kubectl=1.19.3-00'
+multipass exec master6 -- bash -c 'sudo apt-get install -y kubelet=1.19.3-00 kubeadm=1.19.3-00 kubectl=1.19.3-00'
 multipass exec master6 -- bash -c 'sudo apt-mark hold kubelet kubeadm kubectl'
 multipass exec master6 -- bash -c 'sudo swapoff -a'
 multipass exec master6 -- bash -c  "sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab"
